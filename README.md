@@ -1,6 +1,6 @@
 # telescopes
 
-![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
+![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -19,8 +19,8 @@ A Helm chart for Kubernetes
 | autoscaling.maxReplicas | int | `2` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| env.config.key1 | string | `"value1"` |  |
-| env.secrets.key2 | string | `"value2"` |  |
+| env.secrets.key | string | `"key2"` |  |
+| env.secrets.name | string | `"telescopes-secret"` |  |
 | fullnameOverride | string | `""` |  |
 | global.ingress.className | string | `"harness"` |  |
 | global.ingress.enabled | bool | `false` |  |
@@ -36,17 +36,11 @@ A Helm chart for Kubernetes
 | ingress.className | string | `"nginx"` |  |
 | java.memory | string | `"4096m"` |  |
 | java.memoryLimit | string | `"4096m"` |  |
-| maxSurge | string | `"100%"` |  |
-| maxUnavailable | int | `0` |  |
-| mongoSecrets.password.key | string | `"mongodb-root-password"` |  |
-| mongoSecrets.password.name | string | `"mongodb-replicaset-chart"` |  |
-| mongoSecrets.userName.key | string | `"mongodbUsername"` |  |
-| mongoSecrets.userName.name | string | `"harness-secrets"` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| replicaCount | int | `2` |  |
+| replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"512m"` |  |
 | resources.limits.memory | string | `"1024Mi"` |  |
 | resources.requests.cpu | string | `"512m"` |  |
@@ -57,8 +51,6 @@ A Helm chart for Kubernetes
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `false` |  |
 | serviceAccount.name | string | `"harness-default"` |  |
-| timescaleSecret.password.key | string | `"timescaledbPostgresPassword"` |  |
-| timescaleSecret.password.name | string | `"harness-secrets"` |  |
 | tolerations | list | `[]` |  |
 | waitForInitContainer.image.digest | string | `""` |  |
 | waitForInitContainer.image.pullPolicy | string | `"IfNotPresent"` |  |
