@@ -12,11 +12,7 @@ global:
       enabled: true
       secretName: ''
 
-replicaCount: 2
-
-maxSurge: 100%
-
-maxUnavailable: 0
+replicaCount: 1
 
 java:
   memory: "4096m"
@@ -38,18 +34,10 @@ waitForInitContainer:
     tag: "latest"
     digest: ""
 
-mongoSecrets:
-  userName:
-    name: harness-secrets
-    key: mongodbUsername
-  password:
-    name: mongodb-replicaset-chart
-    key: mongodb-root-password
-
-timescaleSecret:
-  password:
-    name: harness-secrets
-    key: timescaledbPostgresPassword
+env:
+  secrets:
+    name: telescopes-secret
+    key: key2
 
 nameOverride: ""
 fullnameOverride: ""
@@ -84,12 +72,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-env:
-  config:
-    key1: value1
-  secrets:
-    key2: value2
 
 resources:
   limits:

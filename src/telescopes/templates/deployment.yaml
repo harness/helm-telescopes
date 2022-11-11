@@ -9,11 +9,6 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: {{.Values.maxSurge}}
-      maxUnavailable: {{.Values.maxUnavailable}}
   selector:
     matchLabels:
       {{- include "telescopes.selectorLabels" . | nindent 6 }}
@@ -33,6 +28,13 @@ spec:
       serviceAccountName: {{ include "telescopes.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+      - name: wait-for-cloud-info
+        image: {{ include "common.images.image" (dict "imageRoot" .Values.waitForInitContainer.image "global" .Values.global) }}
+        imagePullPolicy: IfNotPresent
+        args:
+          - "pod"
+          - "-lapp=cloud-info"
       containers:
         - name: telescopes
           securityContext:
@@ -54,6 +56,12 @@ spec:
           envFrom:
             - configMapRef:
                 name: telescopes
+          env:
+            - name: key2
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.env.secrets.name }}
+                  key: {{ .Values.env.secrets.key }}
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
