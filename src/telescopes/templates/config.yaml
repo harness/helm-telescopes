@@ -4,6 +4,5 @@ metadata:
   name: telescopes
   namespace: {{ .Release.Namespace }}
 data:
-  key1: value1
   CLOUD_INFO_URL: "http://cloud-info.{{ .Release.Namespace }}.svc.cluster.local:8082/api/v1"
   FEATURE_FLAG_SYSTEM: CF

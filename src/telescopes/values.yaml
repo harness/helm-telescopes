@@ -34,11 +34,6 @@ waitForInitContainer:
     tag: "latest"
     digest: ""
 
-env:
-  secrets:
-    name: telescopes-secret
-    key: key2
-
 nameOverride: ""
 fullnameOverride: ""
 

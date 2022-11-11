@@ -56,12 +56,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: telescopes
-          env:
-            - name: key2
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Values.env.secrets.name }}
-                  key: {{ .Values.env.secrets.key }}
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
