@@ -1,6 +1,6 @@
 # telescopes
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
+![Version: 0.1.8](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.773.0](https://img.shields.io/badge/AppVersion-1.773.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -19,8 +19,6 @@ A Helm chart for Kubernetes
 | autoscaling.maxReplicas | int | `2` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| env.secrets.key | string | `"key2"` |  |
-| env.secrets.name | string | `"telescopes-secret"` |  |
 | fullnameOverride | string | `""` |  |
 | global.ingress.className | string | `"harness"` |  |
 | global.ingress.enabled | bool | `false` |  |
