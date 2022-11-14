@@ -5,4 +5,3 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   CLOUD_INFO_URL: "http://cloud-info.{{ .Release.Namespace }}.svc.cluster.local:8082/api/v1"
-  FEATURE_FLAG_SYSTEM: CF
