@@ -19,6 +19,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
+        app: telescopes
         {{- include "telescopes.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
@@ -34,7 +35,7 @@ spec:
         imagePullPolicy: IfNotPresent
         args:
           - "pod"
-          - "-lapp=cloud-info"
+          - "-lapp=ce-cloud-info"
       containers:
         - name: telescopes
           securityContext:
