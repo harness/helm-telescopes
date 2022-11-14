@@ -3,6 +3,20 @@ entries:
   telescopes:
   - apiVersion: v2
     appVersion: 1.773.0
+    created: "2022-11-14T10:44:53.273162825Z"
+    dependencies:
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes
+    digest: 808cfd5097fef392e1449c3c6230fc0f77878370a3424061d663278fb7ea8c13
+    name: telescopes
+    type: application
+    urls:
+    - https://github.com/harness/helm-telescopes/releases/download/telescopes-0.1.9/telescopes-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.773.0
     created: "2022-11-11T14:21:05.427702247Z"
     dependencies:
     - name: harness-common
@@ -29,4 +43,4 @@ entries:
     urls:
     - https://github.com/harness/helm-telescopes/releases/download/telescopes-0.1.7/telescopes-0.1.7.tgz
     version: 0.1.7
-generated: "2022-11-11T14:21:05.427716148Z"
+generated: "2022-11-14T10:44:53.273178325Z"
