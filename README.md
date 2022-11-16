@@ -14,7 +14,6 @@ A Helm chart for Kubernetes
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| CLOUD_INFO_URL | string | `"http://cloud-info.{{ .Release.Namespace }}.svc.cluster.local:8082/api/v1"` |  |
 | affinity | object | `{}` |  |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `2` |  |
