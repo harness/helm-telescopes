@@ -37,6 +37,8 @@ waitForInitContainer:
 nameOverride: ""
 fullnameOverride: ""
 
+CLOUD_INFO_URL: "http://cloud-info.{{ .Release.Namespace }}.svc.cluster.local:8082/api/v1"
+
 serviceAccount:
   create: false
   annotations: {}
