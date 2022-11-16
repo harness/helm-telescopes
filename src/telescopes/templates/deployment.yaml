@@ -54,9 +54,6 @@ spec:
           - |
             /bin/telescopes \
             --cloudinfo-address={{.Values.CLOUD_INFO_URL}}
-          envFrom:
-            - configMapRef:
-                name: telescopes
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
