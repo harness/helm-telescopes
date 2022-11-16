@@ -53,10 +53,7 @@ spec:
           - "-ecx"
           - |
             /bin/telescopes \
-            --cloudinfo-address={{.Values.CLOUD_INFO_URL}}
-          envFrom:
-            - configMapRef:
-                name: telescopes
+            --cloudinfo-address="http://cloud-info.{{ .Release.Namespace }}.svc.cluster.local:8082/api/v1"
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
